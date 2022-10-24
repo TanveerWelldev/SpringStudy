@@ -9,6 +9,7 @@ public class MainApp {
         HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
 
         //Hello this is another check
+        // Check from Rawnak's PC
 
         objA.getMessage();
         context.registerShutdownHook();
