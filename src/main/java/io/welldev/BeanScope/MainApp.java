@@ -1,6 +1,5 @@
-package com.tutorialspoint;
+package io.welldev.BeanScope;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -8,6 +7,8 @@ public class MainApp {
     public static void main(String[] args) {
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+
+        //Hello this is a check for fetch
 
         objA.getMessage();
         context.registerShutdownHook();
