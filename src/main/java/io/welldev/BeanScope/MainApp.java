@@ -8,7 +8,7 @@ public class MainApp {
         AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
         HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
 
-        //Hello this is a check for fetch
+        //Hello this is another check
 
         objA.getMessage();
         context.registerShutdownHook();
