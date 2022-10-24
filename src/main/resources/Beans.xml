@@ -3,11 +3,18 @@
 <beans xmlns = "http://www.springframework.org/schema/beans"
        xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation = "http://www.springframework.org/schema/beans
-   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+       default-init-method = "init"
+       default-destroy-method = "destroy">
 
-    <bean id = "helloWorld" class = "io.welldev.BeanScope.HelloWorld" init-method="init"
-        destroy-method="destroy">
-        <property name="message" value = "Hello World!"/>
+    <bean id = "helloWorld" class = "io.welldev.HelloWorld">
+        <property name="message1" value = "Hello World!"/>
+        <property name="message2" value="Hello Second World!"/>
+    </bean>
+
+    <bean id = "helloIndia" class = "io.welldev.HelloIndia" parent="helloWorld">
+        <property name="message1" value="Hello India!"/>
+        <property name="message3" value="Namaste India!"/>
     </bean>
 
 </beans>
