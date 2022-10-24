@@ -1,25 +1,21 @@
 package io.welldev;
 
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
     public static void main(String[] args) {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-        HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+        ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
 
-        //Hello this is another check
-        // Check from Rawnak's PC
-        //Check from Arnob's PC
+        context.start();
 
-        objA.getMessage();
-        context.registerShutdownHook();
+        HelloWorld obj = (HelloWorld) context.getBean("helloWorld");
+        obj.getMessage();
 
-//        objA.setMessage("I'm Object A");
-//        objA.getMessage();
-//
-//        HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
-//        objB.getMessage();
+        context.stop();
+
+
 
     }
 }

@@ -10,4 +10,7 @@
         <property name="message" value = "Hello World!"/>
     </bean>
 
+    <bean id = "cStartEventHandler" class = "io.welldev.CStartEventHandler"/>
+    <bean id="cStopEventHandler" class = "io.welldev.CStopEventHandler"/>
+
 </beans>
