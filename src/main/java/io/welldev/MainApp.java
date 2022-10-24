@@ -1,4 +1,4 @@
-package io.welldev.BeanScope;
+package io.welldev;
 
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

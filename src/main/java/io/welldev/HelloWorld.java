@@ -1,4 +1,4 @@
-package io.welldev.BeanScope;
+package io.welldev;
 
 public class HelloWorld {
     private String message;
