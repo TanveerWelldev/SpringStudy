@@ -1,17 +1,18 @@
 package io.welldev;
 
-import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.beans.factory.annotation.Autowired;
 
-public class CustomEventPublisher implements ApplicationEventPublisherAware {
-    private ApplicationEventPublisher publisher;
-    @Override
-    public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
-        this.publisher = applicationEventPublisher;
-    }
+import org.springframework.context.event.ApplicationEventMulticaster;
+import org.springframework.stereotype.Component;
+
+@Component
+public class CustomEventPublisher {
+    @Autowired
+    private ApplicationEventMulticaster aem;
 
     public void publish() {
         CustomEvent ce = new CustomEvent(this);
-        publisher.publishEvent(ce);
+        System.out.println("Publishing");
+        aem.multicastEvent(ce);
     }
 }
