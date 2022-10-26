@@ -9,5 +9,64 @@
           destroy-method="destroy">
         <property name="message" value = "Hello World!"/>
     </bean>
+    <bean id="libraryServiceTarget"
+          class="io.welldev.LibraryService" />
+
+    <bean id="logInputAdvice"
+          class="io.welldev.LogInput" />
+
+    <bean id="logOutputAdvice"
+          class="io.welldev.LogOutput" />
+
+    <bean id="logExceptionAdvice"
+          class="io.welldev.LogException" />
+
+    <bean id="performanceMonitoringAdvice"
+          class="io.welldev.PerformanceMonitoring" />
+
+    <bean id="logInputPointcutAdvisor"
+          class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+        <property name="advice" ref="logInputAdvice" />
+        <property name="mappedName">
+            <value>*Book</value>
+        </property>
+    </bean>
+
+    <bean id="logOutputPointcutAdvisor"
+          class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+        <property name="advice" ref="logOutputAdvice" />
+        <property name="mappedName">
+            <value>*Book</value>
+        </property>
+    </bean>
+
+    <bean id="logExceptionPointcutAdvisor"
+          class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+        <property name="advice" ref="logExceptionAdvice" />
+        <property name="mappedName">
+            <value>*Book</value>
+        </property>
+    </bean>
+
+    <bean id="performanceMonitoringPointcutAdvisor"
+          class="org.springframework.aop.support.NameMatchMethodPointcutAdvisor">
+        <property name="advice" ref="performanceMonitoringAdvice" />
+        <property name="mappedName">
+            <value>*Book</value>
+        </property>
+    </bean>
+
+    <bean id="libraryServiceProxy"
+          class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref ="libraryServiceTarget" />
+        <property name="interceptorNames">
+            <list>
+                <value>logInputPointcutAdvisor</value>
+                <value>logOutputPointcutAdvisor</value>
+                <value>logExceptionPointcutAdvisor</value>
+                <value>performanceMonitoringPointcutAdvisor</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>
