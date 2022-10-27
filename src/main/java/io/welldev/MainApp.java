@@ -1,15 +1,17 @@
 package io.welldev;
 
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainApp {
     public static void main(String[] args) {
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-        HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
+        ApplicationContext context = new AnnotationConfigApplicationContext(AOPConfig.class);
+        Student student = (Student) context.getBean("student");
 
-        objA.getMessage();
-        context.registerShutdownHook();
+        student.getName();
+        student.getAge();
+
+        student.printThrowException();
 
 
 
