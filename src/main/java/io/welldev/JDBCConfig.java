@@ -15,7 +15,7 @@ public class JDBCConfig {
         dmd.setDriverClassName("org.postgresql.Driver");
         dmd.setUrl("jdbc:postgresql://localhost:5432/Test");
         dmd.setUsername("postgres");
-        dmd.setPassword("Csgrindonset2");
+        dmd.setPassword("****"); //here you set the password of your user
 
         return dmd;
     }
