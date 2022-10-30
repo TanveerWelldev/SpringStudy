@@ -34,7 +34,7 @@ public class StudentJDBCTemplate implements StudentDAO{
     @Override
     public Student getStudent(Integer id) {
         String SQL = "select * from Student where id = ?";
-        Student student = jdbcTemplateObject.queryForObject(SQL, new Object[]{id}, new StudentMapper());
+        Student student = jdbcTemplateObject.queryForObject(SQL, new StudentMapper(), new Object[]{id});
 
         return student;
     }
