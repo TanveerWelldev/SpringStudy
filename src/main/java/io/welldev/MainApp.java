@@ -1,34 +1,33 @@
 package io.welldev;
 
+import io.welldev.jdbc.model.Address;
+import io.welldev.jdbc.model.Student;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.AbstractApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.lang.reflect.Proxy;
 import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(JDBCConfig.class);
-        StudentJDBCTemplate studentJDBCTemplate = (StudentJDBCTemplate) context.getBean(StudentJDBCTemplate.class);
+       StudentManagerImpl studentManager = (StudentManagerImpl) context.getBean("studentManager");
 
-        System.out.println("------Records creation--------" );
-        studentJDBCTemplate.create("Zara", 11, 99, 2010);
-        studentJDBCTemplate.create("Nuha", 20, 97, 2010);
-        studentJDBCTemplate.create("Ayan", 25, 100, 2011);
+        Student std = createDummyStudent();
+        studentManager.createStudent(std);
 
-        System.out.println("------Listing all the records--------" );
-        List<StudentMarks> studentMarks = studentJDBCTemplate.listStudents();
+    }
 
-        for (StudentMarks record : studentMarks) {
-            System.out.print("ID : " + record.getId() );
-            System.out.print(", Name : " + record.getName() );
-            System.out.print(", Marks : " + record.getMarks());
-            System.out.print(", Year : " + record.getYear());
-            System.out.println(", Age : " + record.getAge());
-        }
-
+    public static Student createDummyStudent() {
+        Student student = new Student();
+        student.setName("Rabbi");
+        student.setAge(23);
+        Address address = new Address();
+        address.setId(2);
+        address.setCountry("Bangladesh");
+        address.setAddress("Albany Dr, San Jose, CA 95129");
+        student.setAddress(address);
+        return student;
     }
 
 

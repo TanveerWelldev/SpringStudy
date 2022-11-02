@@ -1,4 +1,7 @@
-package io.welldev;
+package io.welldev.jdbc.dao;
+
+import io.welldev.StudentMarks;
+import io.welldev.jdbc.model.Student;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -6,7 +9,7 @@ import java.util.List;
 public interface StudentDAO {
     public void setDataSource(DataSource ds);
 
-    public void create(String name, Integer age, Integer marks, Integer year);
+    public void create(Student student);
 
     public List<StudentMarks> listStudents();
 

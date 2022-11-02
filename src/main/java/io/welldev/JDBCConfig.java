@@ -7,10 +7,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
 @Configuration
+@EnableTransactionManagement
 @ComponentScan({"io.welldev"})
 public class JDBCConfig {
 
@@ -31,5 +33,6 @@ public class JDBCConfig {
     public DataSourceTransactionManager getTransactionManager(DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
+
 
 }
