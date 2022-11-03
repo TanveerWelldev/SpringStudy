@@ -4,13 +4,14 @@ import io.welldev.jdbc.model.Address;
 import io.welldev.jdbc.model.Student;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.lang.reflect.Proxy;
 import java.util.List;
 
 public class MainApp {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(JDBCConfig.class);
+        ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
        StudentManagerImpl studentManager = (StudentManagerImpl) context.getBean("studentManager");
 
         Student std = createDummyStudent();
