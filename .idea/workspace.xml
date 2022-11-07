@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db8594af-a943-4e46-a264-ead2c60e895e" name="Changes" comment="&quot;Asynchronous Event&quot;">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/value.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/CustomEventPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/welldev/CustomEventPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/AnnotConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/Hanzo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/welldev/Kiriko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/AsynchronousSpringEventsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/CustomEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/CustomEventHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/CustomEventPublisher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/HelloWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/welldev/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/welldev/MainApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,15 +47,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tanveerzaman/Study/SpringStudy/src/main/resources&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/tanveerzaman/Study/SpringStudy/src/main/resources",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
@@ -85,9 +93,9 @@
       <list>
         <item itemvalue="Application.io.welldev.MainApp" />
         <item itemvalue="Application.MainApp" />
+        <item itemvalue="Application.io.welldev.MainApp" />
         <item itemvalue="Application.MainApp" />
-        <item itemvalue="Application.io.welldev.MainApp" />
-        <item itemvalue="Application.io.welldev.MainApp" />
+        <item itemvalue="Application.MainApp" />
       </list>
     </recent_temporary>
   </component>
@@ -192,5 +200,16 @@
     <MESSAGE value="&quot;Custom Event&quot;" />
     <MESSAGE value="&quot;Asynchronous Event&quot;" />
     <option name="LAST_COMMIT_MESSAGE" value="&quot;Asynchronous Event&quot;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/welldev/MainApp.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
