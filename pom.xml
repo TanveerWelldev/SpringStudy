@@ -116,4 +116,16 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>DPS</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
+
 </project>
