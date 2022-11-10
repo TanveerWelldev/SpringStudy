@@ -11,9 +11,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
 
+@ComponentScan({"io.welldev"})
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({"io.welldev"})
 public class JDBCConfig {
 
     @Bean("driverManager")
@@ -33,6 +33,11 @@ public class JDBCConfig {
     public DataSourceTransactionManager getTransactionManager(DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
+
+//    @Bean
+//    public StudentManagerImpl getStudentManager() {
+//        return new StudentManagerImpl();
+//    }
 
 
 }
